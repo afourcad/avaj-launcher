@@ -1,3 +1,5 @@
+package fr.fortytwo.avajlauncher.vehicules;
+
 abstract class AircraftFactory {
     public Flyable newAircraft(
             String type,
@@ -6,6 +8,6 @@ abstract class AircraftFactory {
             int latitude,
             int height
         ){
-            
+            return new Flyable();
         };
 }

@@ -1,3 +1,5 @@
+package fr.fortytwo.avajlauncher.weather;
+
 class WeatherProvider {
     private WeatherProvider weatherProvider;
     private List<String> weather;

@@ -1,3 +1,5 @@
+package fr.fortytwo.avajlauncher.vehicules;
+
 //ajouter la vie de cette classe soit liée a l etat de Aircraft
 class Coordinates {
     private int longitude;

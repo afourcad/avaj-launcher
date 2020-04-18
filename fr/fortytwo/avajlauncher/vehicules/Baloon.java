@@ -1,3 +1,6 @@
+package fr.fortytwo.avajlauncher.vehicules;
+import fr.fortytwo.avajlauncher.weather.*;
+
 class Baloon extends Aircraft {
     private WeatherTower weatherTower;
 

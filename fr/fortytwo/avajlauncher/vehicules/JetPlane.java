@@ -1,7 +1,9 @@
-class Helicopter extends Aircraft {
+package fr.fortytwo.avajlauncher.vehicules;
+
+class JetPlane extends Aircraft {
     private WeatherTower weatherTower;
 
-    Helicopter(String name, Coordinates Coordinates) {
+    JetPlane(String name, Coordinates Coordinates) {
         //super(name, coordinates), un truc dans le genre
     }
 
