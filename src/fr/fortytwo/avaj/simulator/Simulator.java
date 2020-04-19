@@ -19,17 +19,19 @@ public class Simulator {
             String line = reader.readLine();
             if(line != null) {
                 WeatherTower weatherTower = new WeatherTower();
+
                 int simulations = Integer.parseInt(line.split(" ")[0]);
                 if (simulations < 0){
                     System.out.println("Invalid simulations count " + simulations);
                 }
+
                 while ((line = reader.readLine()) != null) {
                     Flyable flyable = AircraftFactory.newAircraft(
-                            line.split(" ")[0],
-                            line.split(" ")[1],
-                            Integer.parseInt(line.split(" ")[2]),
-                            Integer.parseInt(line.split(" ")[3]),
-                            Integer.parseInt(line.split(" ")[4])
+                            line.split(" ")[0], //type
+                            line.split(" ")[1], //name
+                            Integer.parseInt(line.split(" ")[2]), //Longitude
+                            Integer.parseInt(line.split(" ")[3]), //Latitude
+                            Integer.parseInt(line.split(" ")[4]) //Height
                     );
                     flyables.add(flyable);
                 }

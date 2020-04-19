@@ -1,7 +1,6 @@
 package fr.fortytwo.avaj.simulator.vehicules;
 
 import fr.fortytwo.avaj.simulator.WeatherTower;
-import fr.fortytwo.avaj.weather.Coordinates;
 
 public class JetPlane extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
