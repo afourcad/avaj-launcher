@@ -11,8 +11,14 @@ public class Coordinates {
         this.height = getRangedHeight(height);
     }
 
+    public void updateCoordinates(int longitude, int latitude, int height) {
+        setLongitude(this.longitude + longitude);
+        setLatitude(this.latitude + latitude);
+        setHeight(this.height + height);
+    }
+
     public void setLongitude(int longitude) {
-        this.longitude = longitude;
+        this.longitude = Math.max(longitude, 0);
     }
 
     public int getLongitude() {
@@ -20,7 +26,7 @@ public class Coordinates {
     }
 
     public void setLatitude(int latitude) {
-        this.latitude = latitude;
+        this.latitude = Math.max(latitude, 0);
     }
 
     public int getLatitude() {
@@ -28,7 +34,7 @@ public class Coordinates {
     }
 
     public void setHeight(int height) {
-        this.height = height;
+        this.height = getRangedHeight(height);
     }
 
     public int getHeight() {

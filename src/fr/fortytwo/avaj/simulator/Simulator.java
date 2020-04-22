@@ -13,7 +13,6 @@ import java.util.List;
 public class Simulator {
 
     public static void main(String[] args) throws InterruptedException {
-        List<Flyable> flyables = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
             String line = reader.readLine();
@@ -27,16 +26,16 @@ public class Simulator {
 
                 while ((line = reader.readLine()) != null) {
                     Flyable flyable = AircraftFactory.newAircraft(
-                            line.split(" ")[0], //type
-                            line.split(" ")[1], //name
+                            line.split(" ")[0], //Type
+                            line.split(" ")[1], //Name
                             Integer.parseInt(line.split(" ")[2]), //Longitude
                             Integer.parseInt(line.split(" ")[3]), //Latitude
                             Integer.parseInt(line.split(" ")[4]) //Height
                     );
-                    flyables.add(flyable);
+                    weatherTower.register(flyable);
                 }
 
-                for (Flyable flyable: flyables){
+                for (Flyable flyable: weatherTower.getObservers()){
                     flyable.registerTower(weatherTower);
                 }
 
