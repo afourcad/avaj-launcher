@@ -10,9 +10,10 @@ import java.io.IOException;
 
 public class Simulator {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
         try {
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
+
             String line = reader.readLine();
             if(line != null) {
                 WeatherTower weatherTower = new WeatherTower();
@@ -45,10 +46,10 @@ public class Simulator {
             System.out.println("Couldn't find file " + args[0]);
         } catch (IOException error){
             System.out.println("There was an error reading the file " + args[0]);
-        }catch (ArrayIndexOutOfBoundsException error) {
+        } catch (ArrayIndexOutOfBoundsException error) {
             System.out.println("Specify simulation file");
         } finally {
-            //loger.close()
+            Logger.closeLogger();
         }
     }
 }

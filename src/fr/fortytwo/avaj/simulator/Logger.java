@@ -1,27 +1,33 @@
 package fr.fortytwo.avaj.simulator;
 
-import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Logger {
-    private File logger;
+    private static FileWriter logger;
 
-    Logger(){
+    static {
         try {
-            this.logger = new File("simulation.txt");
-            if (this.logger.createNewFile()) {
-                System.out.println("File created: " + this.logger.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
+            logger = new FileWriter("simulation.txt");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
 
+    public static void setNewLog(String string){
+        try {
+            logger.write(string + "\n");
+        } catch (IOException e) {
+            System.out.println("Cannot write to the file");
+        }
+    }
 
-    public void setNewLog(String string){
-        this.logger.canWrite();
+    public static void closeLogger(){
+        try {
+            logger.close();
+        } catch (IOException e) {
+            System.out.println("Cannot close the file");
+        }
     }
 }

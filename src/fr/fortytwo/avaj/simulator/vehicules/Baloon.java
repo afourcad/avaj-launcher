@@ -1,5 +1,6 @@
 package fr.fortytwo.avaj.simulator.vehicules;
 
+import fr.fortytwo.avaj.simulator.Logger;
 import fr.fortytwo.avaj.simulator.WeatherTower;
 
 public class Baloon extends Aircraft implements Flyable {
@@ -14,34 +15,38 @@ public class Baloon extends Aircraft implements Flyable {
         switch(weatherTower.getWeather(this.coordinates)){
             case "SUN":
                 this.coordinates.updateCoordinates(2, 0, 4);
-                //TODO: cool phrase;
+                setUpdateMessage("Ho god this is so hot thanksfully we don't have windows !");
                 break;
             case "RAIN":
                 this.coordinates.updateCoordinates(0, 0, -5);
-                //TODO: cool phrase;
+                setUpdateMessage("I wish I could have windows with this bloody rain  !");
                 break;
             case "FOG":
                 this.coordinates.updateCoordinates(0, 0, -3);
-                //TODO: cool phrase;
+                setUpdateMessage("Do we have windows ?");
                 break;
             case "SNOW":
                 this.coordinates.updateCoordinates(0, 0, -15);
-                //TODO: cool phrase;
+                setUpdateMessage("Thanksfully we have fire up here !");
                 break;
             default:
                 break;
         }
         if (this.coordinates.getHeight() == 0){
             this.isLanded = true;
-        };
-    };
+        }
+    }
     
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         this.weatherTower.towerSays("Baloon", this.name, this.id);
-    };
+    }
 
     public boolean getLanded(){
         return this.isLanded;
+    }
+
+    private void setUpdateMessage(String message){
+        Logger.setNewLog("Baloon#" + this.name + "(" + this.id + "):" + message);
     }
 }

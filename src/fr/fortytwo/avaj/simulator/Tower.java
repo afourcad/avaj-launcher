@@ -18,12 +18,17 @@ public abstract class Tower {
     }
 
     protected void conditionsChanged() {
+        List<Flyable> landedFlyables = new ArrayList<>();
         for (Flyable flyable: this.observers) {
             flyable.updateConditions();
 
             if(flyable.getLanded()){
-                unregister(flyable);
+                landedFlyables.add(flyable);
             }
+        }
+        if (!landedFlyables.isEmpty()){
+            for (Flyable flyable: landedFlyables)
+            unregister(flyable);
         }
     }
 
@@ -32,6 +37,6 @@ public abstract class Tower {
     }
 
    public void towerSays(String type, String name, long id){
-        System.out.println("Tower says: " + type + "#" + name + "(" + id + ")" + " registered to tower");
+        Logger.setNewLog("Tower says: " + type + "#" + name + "(" + id + ")" + " registered to tower");
     }
 }

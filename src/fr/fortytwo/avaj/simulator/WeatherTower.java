@@ -6,14 +6,14 @@ import fr.fortytwo.avaj.weather.WeatherProvider;
 public class WeatherTower extends Tower {
     public String getWeather(Coordinates coordinates) {
         return WeatherProvider.getProvider().getCurrentWeather(coordinates);
-    };
+    }
 
     void changeWeather() {
         this.conditionsChanged();
-    };
+    }
 
     @Override
     public void towerSays(String type, String name, long id){
-        System.out.println("Tower says: " + type + "#" + name + "(" + id + ")" + " registered to weather tower");
+        Logger.setNewLog("Tower says: " + type + "#" + name + "(" + id + ")" + " registered to weather tower");
     }
 }
