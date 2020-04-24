@@ -2,13 +2,13 @@
 
 First java  project from 42
 
-###Installation
+### Installation
 In the root path
 ```
 find * -name "*.java" > sources.txt
 javac -sourcepath @sources.txt
 ```
-###Execution
+### Execution
 ```
 java fr.fortytwo.avaj.simulator.Simulator scenario.txt
 ```
