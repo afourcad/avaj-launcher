@@ -34,6 +34,7 @@ public class Helicopter extends Aircraft implements Flyable {
         }
         if (this.coordinates.getHeight() == 0) {
             this.isLanded = true;
+            setUpdateMessage("Landing !");
         }
     }
 
@@ -48,6 +49,6 @@ public class Helicopter extends Aircraft implements Flyable {
     }
 
     private void setUpdateMessage(String message) {
-        Logger.setNewLog("Helicopter#" + this.name + "(" + this.id + "):" + message);
+        Logger.setNewLog("Helicopter#" + this.name + "(" + this.id + "): " + message);
     }
 }
