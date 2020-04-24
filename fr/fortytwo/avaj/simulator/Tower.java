@@ -1,6 +1,5 @@
 package fr.fortytwo.avaj.simulator;
 
-import fr.fortytwo.avaj.simulator.vehicules.Baloon;
 import fr.fortytwo.avaj.simulator.vehicules.Flyable;
 
 import java.util.ArrayList;

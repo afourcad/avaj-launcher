@@ -12,7 +12,7 @@ public class JetPlane extends Aircraft implements Flyable {
     }
 
     public void updateConditions() {
-        switch(weatherTower.getWeather(this.coordinates)) {
+        switch (weatherTower.getWeather(this.coordinates)) {
             case "SUN":
                 this.coordinates.updateCoordinates(0, 10, 2);
                 setUpdateMessage("We are suffocating in this box !");
@@ -32,21 +32,21 @@ public class JetPlane extends Aircraft implements Flyable {
             default:
                 break;
         }
-        if (this.coordinates.getHeight() == 0){
+        if (this.coordinates.getHeight() == 0) {
             this.isLanded = true;
         }
     }
-    
-    public void registerTower (WeatherTower weatherTower) {
-            this.weatherTower = weatherTower;
-            this.weatherTower.towerSays("JetPlane", this.name, this.id);
+
+    public void registerTower(WeatherTower weatherTower) {
+        this.weatherTower = weatherTower;
+        this.weatherTower.towerSays("JetPlane", this.name, this.id);
     }
 
-    public boolean getLanded(){
+    public boolean getLanded() {
         return this.isLanded;
     }
 
-    private void setUpdateMessage(String message){
+    private void setUpdateMessage(String message) {
         Logger.setNewLog("JetPlane#" + this.name + "(" + this.id + "):" + message);
     }
 }

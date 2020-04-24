@@ -12,7 +12,7 @@ public class Helicopter extends Aircraft implements Flyable {
     }
 
     public void updateConditions() {
-        switch(weatherTower.getWeather(this.coordinates)) {
+        switch (weatherTower.getWeather(this.coordinates)) {
             case "SUN":
                 this.coordinates.updateCoordinates(10, 0, 2);
                 setUpdateMessage("Ho god we have a big fan up here. this is great");
@@ -32,7 +32,7 @@ public class Helicopter extends Aircraft implements Flyable {
             default:
                 break;
         }
-        if (this.coordinates.getHeight() == 0){
+        if (this.coordinates.getHeight() == 0) {
             this.isLanded = true;
         }
     }
@@ -43,11 +43,11 @@ public class Helicopter extends Aircraft implements Flyable {
 
     }
 
-    public boolean getLanded(){
+    public boolean getLanded() {
         return this.isLanded;
     }
 
-    private void setUpdateMessage(String message){
+    private void setUpdateMessage(String message) {
         Logger.setNewLog("Helicopter#" + this.name + "(" + this.id + "):" + message);
     }
 }

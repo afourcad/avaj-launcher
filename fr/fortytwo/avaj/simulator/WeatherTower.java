@@ -13,7 +13,7 @@ public class WeatherTower extends Tower {
     }
 
     @Override
-    public void towerSays(String type, String name, long id){
+    public void towerSays(String type, String name, long id) {
         Logger.setNewLog("Tower says: " + type + "#" + name + "(" + id + ")" + " registered to weather tower");
     }
 }

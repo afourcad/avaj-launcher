@@ -44,8 +44,7 @@ public class Coordinates {
     private int getRangedHeight(int height) {
         if (height <= 0) {
             return 0;
-        }
-        else {
+        } else {
             return Math.min(height, 100);
         }
     }

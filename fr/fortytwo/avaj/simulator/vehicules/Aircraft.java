@@ -6,13 +6,13 @@ public abstract class Aircraft {
     protected Coordinates coordinates;
     private static long idCounter = 0;
 
-    protected Aircraft(String name, Coordinates coordinates){
+    protected Aircraft(String name, Coordinates coordinates) {
         this.id = nextId();
         this.name = name;
         this.coordinates = coordinates;
-    } 
+    }
 
     private long nextId() {
         return ++idCounter;
-    };
+    }
 }

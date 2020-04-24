@@ -12,7 +12,7 @@ public class Baloon extends Aircraft implements Flyable {
     }
 
     public void updateConditions() {
-        switch(weatherTower.getWeather(this.coordinates)){
+        switch (weatherTower.getWeather(this.coordinates)) {
             case "SUN":
                 this.coordinates.updateCoordinates(2, 0, 4);
                 setUpdateMessage("Ho god this is so hot thanksfully we don't have windows !");
@@ -32,21 +32,21 @@ public class Baloon extends Aircraft implements Flyable {
             default:
                 break;
         }
-        if (this.coordinates.getHeight() == 0){
+        if (this.coordinates.getHeight() == 0) {
             this.isLanded = true;
         }
     }
-    
+
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         this.weatherTower.towerSays("Baloon", this.name, this.id);
     }
 
-    public boolean getLanded(){
+    public boolean getLanded() {
         return this.isLanded;
     }
 
-    private void setUpdateMessage(String message){
+    private void setUpdateMessage(String message) {
         Logger.setNewLog("Baloon#" + this.name + "(" + this.id + "):" + message);
     }
 }

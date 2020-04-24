@@ -15,7 +15,7 @@ public class Logger {
         }
     }
 
-    public static void setNewLog(String string){
+    public static void setNewLog(String string) {
         try {
             logger.write(string + "\n");
         } catch (IOException e) {
@@ -23,7 +23,7 @@ public class Logger {
         }
     }
 
-    public static void closeLogger(){
+    public static void closeLogger() {
         try {
             logger.close();
         } catch (IOException e) {
